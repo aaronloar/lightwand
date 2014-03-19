@@ -3,7 +3,7 @@
 #include "utilities.h"
 
 #define NUM_LED         3
-#define STEPS           316
+
 
 //#define ENABLE_TIMERS
 //#define RAINBOW
@@ -12,6 +12,8 @@ void toggle_PC8();
 
 #ifdef RAINBOW
 #define STEPS           64
+#else
+#define STEPS           316
 #endif
 
 
