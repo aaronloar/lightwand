@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.251735350/PATH/delimiter=\:
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.251735350/PATH/operation=replace
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.251735350/PATH/value=/usr/bin/gcc-arm-none-eabi-4_8-2013q4/bin\:/usr/local/arm/bin\:/opt/cov-analysis-linux64-6.5.1/bin\:/usr/lib/lightdm/lightdm\:/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/opt/qnx650/host/linux/x86/usr/bin\:/etc/qnx/bin\:/opt/qnx650/host/host/linux/x86/usr/bin/mkbuild\:/opt/qnx650/qnx650/host/linux/x86/usr/bin/mkbuild
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.251735350/append=true
+environment/project/ilg.gnuarmeclipse.managedbuild.cross.config.elf.release.251735350/appendContributed=true
