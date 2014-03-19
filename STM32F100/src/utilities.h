@@ -16,6 +16,7 @@
 // The workhorse
 void bitBanger(uint32_t value);
 
+void makeRainbowTable(unsigned int*);
 uint32_t concatenate_pixel (uint8_t red, uint8_t green, uint8_t blue);
 
 

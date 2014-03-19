@@ -2,14 +2,18 @@
 #include "effects.h"
 #include "utilities.h"
 
-
 #define NUM_LED         3
 #define STEPS           316
 
 //#define ENABLE_TIMERS
-
+//#define RAINBOW
 
 void toggle_PC8();
+
+#ifdef RAINBOW
+#define STEPS           64
+#endif
+
 
 #ifdef ENABLE_TIMERS
 void startTIM6();
@@ -45,8 +49,15 @@ int main()
     */
 #endif
 
-    uint32_t val_array[(NUM_LED * STEPS)];
 
+#ifdef RAINBOW
+
+    unsigned int rainbowTable[STEPS];
+    makeRainbowTable(rainbowTable);
+#endif
+
+
+    uint32_t val_array[(NUM_LED * STEPS)];
     generate_values(val_array);
 
     uint32_t step;

@@ -116,3 +116,30 @@ uint32_t concatenate_pixel (uint8_t green, uint8_t red, uint8_t blue)
 }
 
 
+void makeRainbowTable(unsigned int tableFull[STEPS]){
+
+    unsigned int tableTemp[255];
+    unsigned int i;
+
+    for( i = 0; i < 128; i++){
+        tableTemp[i] = i*2;
+
+    }
+
+    for(i = 0; i < 128; i++){
+        tableTemp[i + 128] = (255 - (i*2));
+
+    }
+
+    int step = (256 / STEPS);   // 4
+    int offset1 = STEPS / 3;        // 21
+    int offset2 = STEPS * 2 / 3;    // 42
+
+    for (i = 0; i < STEPS; i++){
+        tableFull[i] = (((tableTemp[(i * step)])                    * 0x10000)      // Red
+                      + (tableTemp[( ((i * step) + offset1) % 255)] * 0x1000000)        // Green
+                      + (tableTemp[( ((i * step) + offset2) % 255)] * 0x100));      // Blue
+    }
+}
+
+
