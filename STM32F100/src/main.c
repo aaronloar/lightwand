@@ -52,6 +52,9 @@ int main()
 #endif
 
 
+
+    uint32_t led_array[STEPS][NUM_LED];
+
 #ifdef RAINBOW
 
     unsigned int rainbowTable[STEPS];
@@ -59,33 +62,37 @@ int main()
 #endif
 
 
-    uint32_t val_array[(NUM_LED * STEPS)];
-    generate_values(val_array);
+
+    generate_values(led_array);
 
     uint32_t step;
+    uint8_t leds;
 
     while (1){
     // Loop through value array, and output to the 2812s
 
-        for (step = 0; step < STEPS; step++) {
-                bitBanger(val_array[((NUM_LED * step) + 0)]);  // first LED
-                bitBanger(val_array[((NUM_LED * step) + 1)]);  // second LED
-                bitBanger(val_array[((NUM_LED * step) + 2)]);  // third LED
-                pause_50us();
-                toggle_PC8();
 
-#ifdef ENABLE_TIMERS
-                // set 'run' pin
-                startTIM6();
-                // wait for timer to time out
-                while (TIM6_SR && 0x00000001) {     // wait for timer 6 to time out
-                    TIM6_SR = 0x00000000;
 
+            for (step = 0; step < STEPS; step++) {
+                for(leds = 0; leds < NUM_LED; leds++) {
+                    bitBanger(led_array[step][leds]]);
                 }
-#else
-                pause_500ms();
-#endif
-        }
+                    pause_50us();
+            }
+                    toggle_PC8();
+
+    #ifdef ENABLE_TIMERS
+                    // set 'run' pin
+                    startTIM6();
+                    // wait for timer to time out
+                    while (TIM6_SR && 0x00000001) {     // wait for timer 6 to time out
+                        TIM6_SR = 0x00000000;
+
+                    }
+    #else
+                    pause_500ms();
+    #endif
+            }
     }
 
     return 0;
