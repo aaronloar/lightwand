@@ -4,7 +4,6 @@
 
 #define NUM_LED         3
 
-
 //#define ENABLE_TIMERS
 //#define RAINBOW
 
