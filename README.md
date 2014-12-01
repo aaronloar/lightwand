@@ -9,7 +9,7 @@ The lightwand itself was later re-factored to work with an Arduino because of th
 
 This repository exists as a backup of the original code written by myself and by Donald Bartley.
 
-The Arduino code is available at github.com/aaronloar/lightwand2
+The Arduino code is available at www.github.com/aaronloar/lightwand2
 
 Questions / Comments:  aaronloar (at) gmail (dot) com
 
